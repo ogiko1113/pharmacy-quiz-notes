@@ -1,3 +1,149 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ============================================
+// 🟠 コハク（琥珀）テーマ - Custom CSS
+// ============================================
+
+// --- リンクの装飾 ---
+.page-title a {
+  text-decoration: none !important;
+}
+
+// --- サイドバーのエクスプローラー ---
+.explorer {
+  .folder-title,
+  .folder-icon {
+    color: var(--secondary);
+  }
+}
+
+// --- ヘッダーの装飾 ---
+article {
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
+  }
+
+  h1 {
+    border-bottom: 2px solid var(--tertiary);
+    padding-bottom: 0.4em;
+  }
+
+  h2 {
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 0.3em;
+  }
+}
+
+// --- リンクのホバー効果 ---
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+// --- 引用ブロック ---
+blockquote {
+  border-left: 4px solid var(--tertiary);
+  background: var(--highlight);
+  padding: 0.8em 1.2em;
+  border-radius: 0 8px 8px 0;
+}
+
+// --- テーブルの装飾 ---
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+
+  thead {
+    background: var(--secondary);
+    color: var(--light);
+
+    th {
+      padding: 0.7em 1em;
+      font-weight: 600;
+    }
+  }
+
+  tbody tr {
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: var(--highlight);
+    }
+
+    td {
+      padding: 0.6em 1em;
+      border-bottom: 1px solid var(--lightgray);
+    }
+  }
+}
+
+// --- コードブロック ---
+pre {
+  border-radius: 8px;
+  border: 1px solid var(--lightgray);
+}
+
+// --- 目次 (Table of Contents) ---
+.toc {
+  .depth-1 > li > a {
+    font-weight: 600;
+    color: var(--secondary);
+  }
+}
+
+// --- バックリンク ---
+.backlinks {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1em;
+  margin-top: 2em;
+}
+
+// --- フッター ---
+footer {
+  border-top: 1px solid var(--lightgray);
+  opacity: 0.8;
+}
+
+// --- タグ ---
+a.internal.tag-link {
+  background: var(--highlight);
+  border: 1px solid var(--tertiary);
+  border-radius: 16px;
+  padding: 0.15em 0.6em;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--tertiary);
+    color: var(--light);
+  }
+}
+
+// --- 検索ボックス ---
+.search-bar {
+  border-radius: 20px;
+}
+
+// --- パンくずリスト ---
+.breadcrumb-container {
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+// --- トップページ専用 ---
+.page[data-slug="index"] {
+  article {
+    h1:first-of-type {
+      font-size: 1.8em;
+      text-align: center;
+      border-bottom: 3px solid var(--tertiary);
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+  }
+}
